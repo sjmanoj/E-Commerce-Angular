@@ -1,1 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: sans-serif;
+    /* background-color: #b2a2c4; */
+}
+
+.small-msg{
+	padding-left: 60px;
+    color: green;
+}
+
+.err-msg{
+    display: flex;
+    justify-content: center;
+    color: purple;
+}
+

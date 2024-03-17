@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
+
+*{
+    font-family: 'Poppins', sans-serif;
+    margin:0; padding:0;
+    box-sizing: border-box;
+    outline: none; border:none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: .2s linear;
+}
+
+.container{
+    /* background:linear-gradient(45deg, blueviolet, lightgreen); */
+    padding:15px 9%;
+    padding-bottom: 100px;
+}
+
+.container .heading{
+    padding-bottom: 15px;
+    color: rgb(129, 9, 129);
+    text-shadow: 0 5px 10px rgba(0,0,0,.2);
+    font-size: 50px;
+}
+
+.container .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    gap:15px;
+}
+
+.container .box-container .box{
+    box-shadow: 0 5px 10px rgba(0,0,0,.2);
+    border-radius: 5px;
+    background: #fff;
+    text-align: left;
+    padding:30px 20px;
+}
+
+.container .box-container .box img{
+    float: left;
+    height: 300px;
+    width: 400px;
+    object-fit: contain;
+    margin-right: 100px;
+}
+
+.container .box-container .box h2{
+    padding-bottom: 10px;
+}
+
+.container .box-container .box h3{
+    color:#3d3a3a;
+    font-size: 22px;
+    padding:10px 0 10px 0;
+}
+
+.container .box-container .box p{
+    color:#3c3838;
+    font-size: 15px;
+    line-height: 1.8;
+    padding:10px 0 10px 0;
+}
+
+.container .box-container .box .btn{
+    margin-top: 10px;
+    display: inline-block;
+    background:#333;
+    color:#fff;
+    font-size: 17px;
+    border-radius: 5px;
+    padding: 8px 25px;
+    cursor: pointer;
+}
+
+.container .box-container .box .btn:hover{
+    letter-spacing: 1px;
+}
+
+.product-color{
+    border: 3px solid #ddd;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.quantity-group{
+    margin-top: 20px;
+    margin-left: 41%;
+}
+
+.quantity-group button{
+    padding: 10px;
+    background-color: rgb(168, 119, 168);
+    cursor: pointer;
+}
+.quantity-group input{
+    padding: 10px;
+    width: 40px;
+    border: solid 1px plum;
+}
+
+/* .container .box-container .box:hover{
+    box-shadow: 0 10px 15px rgba(0,0,0,.3);
+    transform: scale(1.03);
+} */
+
+@media (max-width:768px){
+    .container{
+        padding:20px;
+    }
+}

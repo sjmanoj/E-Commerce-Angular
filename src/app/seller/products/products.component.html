@@ -1,0 +1,30 @@
+<div class="view-container">
+    <h2>Products</h2>
+    <table>
+        <tr>
+          <th>Image</th>
+          <th>Product Name</th>
+          <th>Price</th>
+          <th>Color</th>
+          <th>Category</th>
+          <!-- <th>Size</th> -->
+          <th>Description</th>
+          <th>Actions</th>
+        </tr>
+        <tr *ngFor="let item of allProducts">
+          <td><img src={{item.image}}></td>
+          <td>{{item.title}}</td>
+          <td>$ {{item.price}}</td>
+          <td>{{item.color}}</td>
+          <td>{{item.categories}}</td>
+          <!-- <td>50</td> -->
+          <td>{{item.desc}}</td>
+          <td>
+            <a routerLink="/products/update/{{item._id}}"><i class="fa fa-edit icon"></i></a>&nbsp; &nbsp;
+            <a (click)="onDelete(item._id)" style="cursor: pointer;"><i class="fa fa-trash icon"></i></a>
+          </td>
+        </tr>
+        
+      </table>
+</div>
+

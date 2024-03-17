@@ -1,0 +1,38 @@
+<div class="top-container">
+    <div class="main">  
+		<input type="checkbox" id="chk" aria-hidden="true"> 
+			<div class="signup"> 
+				<form [formGroup]="customerSignupForm" (ngSubmit)="onSignup()">
+					<label for="chk" aria-hidden="true">User Sign up</label>
+
+					<input type="text" name="username" placeholder="User Name" formControlName="username">
+					<small class="signup-msg" *ngIf="customerSignupForm.get('username')?.invalid && customerSignupForm.get('username')?.touched">
+						Enter a Valid Username</small>
+
+					<input type="email" name="email" placeholder="Email" formControlName="email">
+					<small class="signup-msg" *ngIf="customerSignupForm.get('email')?.invalid && customerSignupForm.get('email')?.touched">
+						Enter a Valid Email</small>
+
+					<input type="password" name="password" placeholder="Password" formControlName="password">
+					<small class="signup-msg" *ngIf="customerSignupForm.get('password')?.invalid && customerSignupForm.get('password')?.touched">
+						Enter a Valid Password</small>
+
+					<button [disabled]="customerSignupForm.invalid">Sign up</button>
+					<small class="signup-msg">{{signupMsg}}</small>
+				</form>
+			</div>
+
+			<div class="login">
+				<form [formGroup]="customerLoginForm" (ngSubmit)="onLogin()">
+					<label for="chk" aria-hidden="true">User Login</label>
+					<input type="email" name="email" placeholder="Email" formControlName="email">
+					<input type="password" name="password" placeholder="Password" formControlName="password">
+					<button>Login</button>
+					<small class="login-msg">{{signupMsg}}</small>
+					<!-- <a routerLink="products">Link</a> -->
+				</form>
+			</div>
+	</div>
+</div>
+<h5>&copy; 2024 Manoj S J | All Rights Reserved</h5>
+

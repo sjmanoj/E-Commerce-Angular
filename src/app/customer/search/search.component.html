@@ -1,0 +1,23 @@
+<div class="container" *ngIf="allSearchedProducts!==undefined">
+
+    <h1 class="heading">{{paramsData}}</h1>
+  
+    <div class="box-container">
+  
+        <div class="box" *ngFor="let item of allSearchedProducts">
+            <h1>{{item.title}}</h1>
+            <img routerLink="/product-details/{{item._id}}" src="{{item.image}}" alt="">
+            <h2>Price: $ {{item.price}}</h2>
+            <p>Category: {{item.categories}}</p>
+            <p>Color: {{item.color}}</p>
+            <a routerLink="/product-details/{{item._id}}" class="btn">View Details</a>
+        </div>
+  
+    </div>
+ 
+</div>
+
+<div class="container" *ngIf="allSearchedProducts===undefined">
+    <h1 class="heading" style="padding-top: 10%;">{{noResultsMsg}}!</h1>
+</div>
+

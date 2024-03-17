@@ -1,0 +1,83 @@
+<h1>Update Product</h1>
+
+<!-- Create Form -->
+<form id="form" [formGroup]="productUpdateForm" (ngSubmit)="updateProduct()">
+  <!-- Details -->
+  <div class="form-control">
+    <label>Name</label>
+    <input
+      formControlName="title"
+      type="text"
+      name="title"
+      placeholder="Enter Product Name"
+    />
+  </div>
+
+  <div class="form-control">
+    <label>Color</label>
+    <input
+      formControlName="color"
+      type="text"
+      name="color"
+      placeholder="Enter Product Color"
+    />
+  </div>
+
+  <div class="form-control">
+    <label>Price</label>
+    <input
+      formControlName="price"
+      type="text"
+      name="price"
+      placeholder="Enter Product Price"
+    />
+  </div>
+
+  <div class="form-control">
+    <label>Category</label>
+    <input
+      formControlName="categories"
+      type="text"
+      name="categories"
+      placeholder="Enter Product Category"
+    />
+  </div>
+
+  <div class="form-control">
+    <label>Size</label>
+    <input
+      formControlName="size"
+      type="text"
+      name="size"
+      placeholder="Enter Product Size"
+    />
+  </div>
+
+  <div class="form-control">
+    <label>Image URL</label>
+    <input
+      formControlName="image"
+      type="text"
+      name="image"
+      placeholder="Enter Image Url"
+    />
+  </div>
+
+  <div class="form-control">
+    <label for="comment">Description</label>
+    <textarea
+      formControlName="desc"
+      name="text"
+      id=""
+      cols="30"
+      rows="8"
+      name="desc"
+      placeholder="Enter Product Description"
+    ></textarea>
+  </div>
+
+  <p class="err-msg">{{ productMsg }}</p>
+
+  <button class="form-button">Submit</button>
+</form>
+

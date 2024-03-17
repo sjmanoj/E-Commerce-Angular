@@ -1,0 +1,25 @@
+<div class="view-container">
+    <h1>My Orders</h1>
+    <table  *ngIf="orderPresent">
+        <tr>
+          <th>Order</th>
+          <th>Order ID</th>
+          <th>Price</th>
+          <th>Payment Method</th>
+          <th>Action</th>
+        </tr>
+        <tr *ngFor="let item of orders">
+          <td><img src="https://www.clipartmax.com/png/middle/210-2106541_track-my-order-beach-volleyball.png"></td>
+          <td>{{item.paymentIntent.id}}</td>
+          <td>$ {{item.paymentIntent.amount}}</td>
+          <td>{{item.orderStatus}}</td>
+          <td><button class="cancel-order" (click)="cancelOrder(item.paymentIntent.id)"><i class="fa fa-trash" aria-hidden="true"></i>&nbsp;Cancel Order</button></td>
+        </tr>
+        
+      </table>
+
+      <div class="order-presence" *ngIf="!orderPresent">
+        <h2 routerLink="/"><i class="fa fa-hand-spock-o" aria-hidden="true"></i>&nbsp;You Have No Orders, Please Click Here To Shop</h2>
+      </div>
+</div>
+

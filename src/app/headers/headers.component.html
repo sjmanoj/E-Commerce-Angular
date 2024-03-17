@@ -1,0 +1,53 @@
+<div class="container">
+    <nav class="nav">
+        <h1 class="header" routerLink="/"><i class="fa fa-superpowers"></i>&nbsp; &nbsp;My Shopping Website</h1>
+
+        <div class="nav-search" *ngIf="menuType!=='seller'">
+
+            <input #searchInput (keyup)="searchProduct($event)" (blur)="hideSearch()" type="text" placeholder="Search for Products" >
+            <button (click)="onSearch(searchInput.value)"><i class="fa fa-search"></i>&nbsp;Search</button>
+
+            <ul class="suggested-result" *ngIf="searchResults">
+                <li *ngFor="let item of searchResults">
+                    <a (mousedown)="redirectToDetails(item._id)">{{item.title}}</a>
+                </li>
+            </ul>
+
+        </div>
+
+        <div [ngSwitch]="menuType" class="list">
+            <ul *ngSwitchCase="'default'">
+                <li routerLink="/">Shop</li>
+                <li>Cart [{{cartCount}}]</li>
+                <li routerLink="/seller-signup">Seller</li>
+                <li routerLink="/customer-signup">Customer</li>  
+            </ul>
+
+            <ul *ngSwitchCase="'customer'">
+                <li routerLink="/">Shop</li>
+                <li routerLink="/cart">Cart [{{cartCount}}]</li>
+                <li routerLink="/orders">Orders</li>
+                <li (click)="onCustomerLogout()">Logout</li>   
+                <div class="dropdown">
+                    <li (mouseenter)="isHidden = !isHidden" (mouseleave)="isHidden = !isHidden" class="dropbtn"><i class="fa fa-info-circle"></i></li>
+                    <div class="dropdown-content">
+                        <a *ngIf="isHidden">&nbsp; &nbsp;{{userName | titlecase}}!</a>
+                    </div>    
+                </div> 
+            </ul>
+
+            <ul *ngSwitchCase="'seller'">
+                <li routerLink="/products">Products</li>
+                <li routerLink="/products/upload">Add</li>
+                <li (click)="onSellerLogout()">Logout</li>  
+                <div class="dropdown">
+                    <li (mouseenter)="isHidden = !isHidden" (mouseleave)="isHidden = !isHidden" class="dropbtn"><i class="fa fa-info-circle"></i></li>
+                    <div class="dropdown-content">
+                        <a *ngIf="isHidden">&nbsp; &nbsp;Welcome {{userName | titlecase}}!</a>
+                    </div>    
+                </div> 
+            </ul>
+        </div>
+    </nav>
+</div>
+

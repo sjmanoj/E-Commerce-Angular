@@ -1,0 +1,57 @@
+.view-container{
+    margin: 1%;
+}
+
+.view-container h1{
+    display: flex;
+    justify-content: center;
+    color: purple;
+    font-size: 50px;
+    font-family: "Poppins", sans-serif;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid #ddd;
+  margin-top: 1%;
+}
+
+th,
+td {
+  text-align: center;
+  padding: 16px;
+  border: 1px solid plum;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+img{
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+}
+
+.icon{
+  color: purple;
+}
+
+.cancel-order{
+  padding: 5px;
+  background-color: #573b8a;
+  color: white;
+  cursor: pointer;
+}
+
+.order-presence h2{
+  margin-top: 150px;
+  margin-bottom: 50px;
+  color: #573b8a;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 2rem;
+}
